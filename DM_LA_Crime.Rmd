@@ -1,7 +1,73 @@
 ---
-title: "DM_LA_Crime"
+title: "Crime Data from 2010 to Present"
 author: "vvsy, ginkapap, jerremiah"
 date: "10/3/2018"
 output: html_document
 ---
+
+#####該資料反映了洛杉磯2010年至今的犯罪事件。這些報告原本是從原始犯罪紙本報告轉錄成CSV，因此數據中可能存在一些不准確之處。一些缺少數據的位置標記為（0°，0°）。
+
+#####資料網址：https://catalog.data.gov/dataset/crime-data-from-2010-to-present
+
+#####原資料研究方向：無
+
+####變數介紹：
+
+<strong>DR Number</strong>：每一案件的官方代碼，共九碼，前四碼分別為年份與發生區域
+
+<strong>Date Reported</strong>：案件報案日期（MM/DD/YYYY）
+
+<strong>Date Occurred</strong>：案件發生日期（MM/DD/YYYY）
+
+<strong>Time Occurred</strong>：案件發生時間（24時制）
+
+<strong>Area ID</strong>：由洛杉磯警察局劃分出的21塊區域
+
+<strong>Area Name</strong>：區域名稱
+
+<strong>Reporting District</strong>：由四碼組成的區域
+
+<strong>Crime Code</strong>：犯罪形式代碼
+
+<strong>Crime Code Description</strong>：犯罪形式描述
+
+<strong>MO Codes</strong>：與犯罪嫌疑人有關的活動代碼
+
+<strong>Victim Age</strong>：受害者年齡（兩位數）
+
+<strong>Victim Sex</strong>：受害者性別（F - Female M - Male X - Unknown）
+
+<strong>Victim Descent</strong>：受害者人種
+
+<strong>Location</strong>：發生犯罪事件地點，資料為(x,y)經緯度
+
+<strong>Cross Street</strong>：發生犯罪事件附近十字入口
+
+<strong>Address</strong>：發生犯罪事件的街道地址
+
+<strong>Crime Code 1</strong>：犯罪形式，最為嚴重的犯罪事件
+
+<strong>Crime Code 2</strong>：犯罪形式，次之嚴重的犯罪事件
+
+<strong>Crime Code 3</strong>：犯罪形式，第三嚴重的犯罪事件
+
+<strong>Crime Code 4</strong>：犯罪形式，第四嚴重的犯罪事件
+
+<strong>Status Description</strong>：定義提供的狀態代碼
+
+<strong>Status Code</strong>：案件的狀況
+
+<strong>Weapon Description</strong>：定義提供的武器代碼
+
+<strong>Weapon Used Code</strong>：用以犯罪的武器
+
+<strong>Premise Description</strong>：定義提供的犯罪現場代碼
+
+<strong>Premise Code</strong> ：犯罪現場的結構，車輛地點的類型
+
+#####研究方向：
+根據其他變數，例如發生位置、犯罪武器、犯罪時間、受害人種...等，來預測案件發生的可能形式。
+
+想知道哪一類人種，會較常發生什麼樣的案件。
+
 
