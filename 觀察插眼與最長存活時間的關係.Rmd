@@ -1,0 +1,34 @@
+---
+title: "觀察插眼與最長存活時間的關係"
+author: "Vvsy"
+date: "10/9/2018"
+output: html_document
+---
+```{r}
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+df <- read.csv("/Users/wongshnyau/Desktop/stats1.csv")
+```
+
+
+```{r}
+e0 <- ggplot(df,aes(wardsbought,wardsplaced))
+e0+geom_point()
+```
+從這圖可以看出，大部分的人不會額外買眼，額是使用飾品的免費眼來插，故我們將針對有放眼的情況去討論，而不是買眼的情況去討論。
+
+
+```{r}
+e1 <- ggplot(df,aes(longesttimespentliving,wardsplaced))
+e1+geom_point()
+```
+從此圖來看，大部分眼睛買最多的人，多為存活在五百秒左右，而那些存活最久的人，其實沒有太多放綠眼的習慣，有可能是因為他們並不需要放綠眼增加視野，那些綠眼放最多的通常是sup，存活時間約為500秒（八分半），可能會與ad死的時間有大大相關（因為sup較常跟ad行動），而那些存活最久的人通常可能為上路坦克或JG，我們發現，隨著存活時間越長，放置眼睛數量會逐漸變少，幾乎只插自己的免費綠眼來減少被GANK的機會，試問，會不會是為了省錢來購買特定防裝呢？
+```{r}
+e2 <- ggplot(df,aes(longesttimespentliving,pinksbought))
+e2 + geom_point()
+```
+我們另外看一下放置粉眼與存活時間的關係，粉眼的放置更明顯發現，存活時間越長者，放置粉眼越少，表示他們更不會願意多花額外金錢去購買，似乎更有可能是將錢拿去購買裝備。
+
