@@ -1,0 +1,46 @@
+---
+title: "觀察插眼與最長存活時間的關係"
+author: "Vvsy"
+date: "10/9/2018"
+output: html_document
+---
+```{r}
+library(dplyr)
+library(ggplot2)
+library(magrittr)
+```
+
+```{r}
+df <- read.csv("~/Dropbox/現在的LOL.csv")
+```
+
+```{r}
+df %>% head
+```
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=FALSE)
+library(reticulate)
+use_condaenv("/anaconda3/envs/m-team/bin/python")
+```
+
+
+
+```{r}
+source_python("test.py")
+```
+
+```{r}
+dfp$win<-as.factor(dfp$win)
+```
+
+```{r}
+e1 <- ggplot(dfp,aes(win,wardsplaced))
+e1 + geom_boxplot()
+```
+一般來說，每位玩家的整場合理放眼數為30隻以下，故我們先將離群值去除，接著從此圖來看，發現其實插眼數的影響並未對輸贏有很大的影響，兩群人的中位數皆為10隻眼，但平均數來講，雖然差距不大，贏的人的確會插較多眼。
+```{r}
+e2 <- ggplot(dfp,aes(win,pinksbought))
+e2 + geom_boxplot()
+```
+我們另外看一下放置粉眼與輸贏的關係，這裡就可以很明顯地看出粉眼的購買量，也就是在清除敵方視野的積極度，勝者的積極度較高，在中位數與平均數都比輸者還高，可見視野的控制對於輸贏佔有絕對的影響。
+

@@ -1,0 +1,53 @@
+---
+title: "觀察裝備與最長存活時間的關係"
+author: "Vvsy"
+date: "10/9/2018"
+output: html_document
+---
+
+```{r}
+library(dplyr)
+library(ggplot2)
+library(magrittr)
+```
+
+```{r}
+df <- read.csv("/Users/wongshnyau/Desktop/stats1.csv")
+```
+
+
+```{r}
+df$win<-as.factor(df$win)
+```
+
+```{r}
+str(df)
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message=FALSE)
+library(reticulate)
+use_condaenv("/anaconda3/envs/m-team/bin/python")
+```
+
+```{r}
+source_python("DC_items.py")
+```
+
+```{r}
+e0 <- ggplot(dfp0,aes(longesttimespentliving))
+e0 + geom_density()
+```
+```{r}
+e1 <- ggplot(dfp1,aes(longesttimespentliving))
+e1 + geom_density()
+```
+
+
+
+
+
+
+
+
+
